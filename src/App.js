@@ -27,7 +27,7 @@ function App() {
           </Layout>
 
           <div className='footer'>
-            <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }} >
+            <Typography.Title level={5} style={{ color: '#efb90b', textAlign: 'center' }} >
               CryptoMania <br />
               All rights reserved
             </Typography.Title>

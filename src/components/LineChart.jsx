@@ -1,10 +1,13 @@
 import { Line } from 'react-chartjs-2';
+import 'chart.js';
+
+import { Chart } from 'chart.js';
 import { Col, Row, Typography } from 'antd';
 
 const { Title } = Typography;
 
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
-    /* const coinPrice = [];
+    const coinPrice = [];
     const coinTimestamp = [];
 
     for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
@@ -14,6 +17,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
         coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
     }
+
     const data = {
         labels: coinTimestamp,
         datasets: [
@@ -21,23 +25,20 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
                 label: 'Price In USD',
                 data: coinPrice,
                 fill: false,
-                backgroundColor: '#0071bd',
-                borderColor: '#0071bd',
+                backgroundColor: '#efb90b',
+                borderColor: '#efb90b',
             },
         ],
     };
 
     const options = {
         scales: {
-            yAxes: [
-                {
-                    ticks: {
-                        beginAtZero: true,
-                    },
-                },
-            ],
+            y: {
+                beginAtZero: true,
+                type: 'linear'
+            },
         },
-    }; */
+    };
 
     return (
         <>
@@ -48,7 +49,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
                     <Title level={5} className="current-price">Current {coinName} Price: $ {currentPrice}</Title>
                 </Col>
             </Row>
-            {/* <Line data={data} options={options} /> */}
+            <Line data={data} options={options} />
         </>
     );
 };

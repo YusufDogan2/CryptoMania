@@ -31,12 +31,12 @@ const Navbar = () => {
             <div className="logo-container">
                 <Avatar src={icon} size="large" />
                 <Typography.Title level={2} className='logo'>
-                    <Link to="/" className='asdf'>CryptoMania</Link>
+                    <Link to="/" >CryptoMania</Link>
                 </Typography.Title>
                 <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined /></Button>
             </div >
             {activeMenu && (
-                <Menu theme="dark">
+                <Menu /* theme="dark" */>
                     <Menu.Item icon={<HomeOutlined />}>
                         <Link to="/">Home</Link>
                     </Menu.Item>
